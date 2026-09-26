@@ -1,1 +1,156 @@
-<!DOCTYPE html> <html> <head> <title>Project Game X2</title> </head> <body> <h1>🎮 Project Game X2</h1> <p>My game website!</p> <button onclick="alert('You clicked the button!')"> PLAY </button> </body> </html>
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Project Game X2</title>
+
+<style>
+
+body {
+margin: 0;
+min-height: 100vh;
+color: white;
+font-family: Arial, sans-serif;
+text-align: center;
+overflow: hidden;
+
+background:
+radial-gradient(circle at 50% 100%, #7b00ff, transparent 35%),
+#020205;
+}
+
+/* Moving stars */
+body::before {
+content: "";
+position: fixed;
+inset: -100%;
+z-index: -1;
+
+background-image:
+radial-gradient(white 1px, transparent 1px),
+radial-gradient(white 1.5px, transparent 1.5px),
+radial-gradient(#aaa 1px, transparent 1px);
+
+background-size:
+90px 90px,
+170px 170px,
+250px 250px;
+
+animation: spaceMove 25s linear infinite;
+opacity: 0.7;
+}
+
+@keyframes spaceMove {
+
+from {
+transform: translate(0, 0);
+}
+
+to {
+transform: translate(250px, 350px);
+}
+
+}
+
+h1 {
+margin-top: 80px;
+font-size: 45px;
+text-shadow: 0 0 20px #9b4dff;
+}
+
+p {
+font-size: 20px;
+}
+
+/* Google search bar */
+
+.search {
+margin: 40px auto;
+width: 80%;
+max-width: 700px;
+display: flex;
+}
+
+.search input {
+flex: 1;
+height: 55px;
+border-radius: 30px 0 0 30px;
+border: 2px solid #7b00ff;
+background: #08080c;
+color: white;
+padding: 0 20px;
+font-size: 18px;
+outline: none;
+}
+
+.search button {
+width: 70px;
+border: none;
+border-radius: 0 30px 30px 0;
+background: #7b00ff;
+color: white;
+font-size: 22px;
+cursor: pointer;
+}
+
+.search button:hover {
+background: #9b4dff;
+}
+
+/* Play button */
+
+.play {
+padding: 15px 35px;
+border: none;
+border-radius: 12px;
+background: #7b00ff;
+color: white;
+font-size: 20px;
+cursor: pointer;
+box-shadow: 0 0 20px #7b00ff88;
+}
+
+.play:hover {
+transform: scale(1.05);
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>🎮 PROJECT GAME X2</h1>
+
+<p>My game website!</p>
+
+<!-- Google Search -->
+
+<form
+class="search"
+action="https://www.google.com/search"
+method="GET"
+target="_blank"
+>
+
+<input
+type="text"
+name="q"
+placeholder="Search Google..."
+>
+
+<button type="submit">🔎</button>
+
+</form>
+
+<!-- Play Button -->
+
+<button
+class="play"
+onclick="location.href='snake.html'"
+>
+🐍 PLAY SNAKE
+</button>
+
+</body>
+
+</html>
